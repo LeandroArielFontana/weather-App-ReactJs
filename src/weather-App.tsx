@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { WeatherData } from "./interfaces/weatherData";
+import Input from "./components/common/Input";
 
 function App() {
   const apiKey = "860e4fe79668a540887b671330f7e50e";
@@ -18,7 +19,10 @@ function App() {
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${apiKey}&units=metric`
         );
-        setImageURL(`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+        setImageURL(
+          `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+        );
+        console.log(response.data);
         setWeather(response.data);
       } catch (error) {
         setError(error as Error);
@@ -41,12 +45,10 @@ function App() {
     <>
       <div className="App">
         <header className="App-header">
+          
+          <Input />
           <h1>Clima de hoy</h1>
-          {imageUrl ? (
-            <img src={imageUrl} alt="" />
-          ) : (
-            <h1>Error</h1>
-          )}
+          {imageUrl ? <img src={imageUrl} alt="" /> : <h1>Error</h1>}
           <h4>
             {weather ? `Temperatura: ${weather.main.temp}°C` : "No disponible"}
           </h4>
