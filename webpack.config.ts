@@ -1,7 +1,6 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const path = require("path");
-const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,7 +15,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: [".js", ".jsx", ".tsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   module: {
     rules: [
@@ -27,6 +26,10 @@ module.exports = {
       },
       {
         test: /\.svg$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.(jpg|jpeg)$/,
         use: ["file-loader"],
       },
       {

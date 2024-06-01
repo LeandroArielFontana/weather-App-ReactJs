@@ -1,25 +1,25 @@
-import { TextField } from "@mui/material";
 import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
+import { TextField } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import { FC } from "react";
+import { StyledDivInput, StyledInput } from "./styled";
 
 const Input: FC = () => {
   return (
-    <>
-      <TextField
-        id="outlined-basic"
-        // label="Outlined"
-        variant="outlined"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <LocationSearchingIcon />
-            </InputAdornment>
-          ),
-        }}
-        placeholder="Ingresa tu ubicacion"
-      />
-    </>
+    <StyledDivInput>
+      <StyledInput
+          id="outlined-basic"
+          variant="outlined"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <LocationSearchingIcon />
+              </InputAdornment>
+            ),
+          }}
+          placeholder="Ingrese su ubicacion"
+        />
+    </StyledDivInput>
   );
 };
 
