@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Input from "../input";
 import { StyledContainer, StyledWeatherCard } from "./weatherCardStyle";
+import WeatherBox from "../weatherBox/weatherBox";
 
 function WeatherCard() {
   const API_KEY = "860e4fe79668a540887b671330f7e50e";
@@ -19,7 +20,7 @@ function WeatherCard() {
       setImageURL(
         `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setWeather(response.data);
     } catch (error) {
       setError(error as Error);
@@ -43,14 +44,8 @@ function WeatherCard() {
   return (
     <StyledWeatherCard>
       <StyledContainer>
-        <body className="App-header">
-          <Input />
-          <h1>Clima de hoy</h1>
-          {imageUrl ? <img src={imageUrl} alt="" /> : <h1>Error</h1>}
-          <h4>
-            {weather ? `Temperatura: ${weather.main.temp}°C` : "No disponible"}
-          </h4>
-        </body>
+        <Input />
+        <WeatherBox imageUrl={imageUrl} weather={weather} />
       </StyledContainer>
     </StyledWeatherCard>
   );

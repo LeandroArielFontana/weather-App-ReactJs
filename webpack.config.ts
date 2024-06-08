@@ -5,12 +5,13 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    path: path.join(__dirname + "/public"),
+    path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
   },
   mode: 'development',
   devServer: {
     compress: true,
+    host: '0.0.0.0',
     port: 3000,
     historyApiFallback: true,
   },

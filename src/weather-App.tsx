@@ -3,10 +3,10 @@ import WeatherCard from "./components/common/weatherCard/weatherCard";
 
 function App() {
   return (
-    <>
+    <body>
       <GlobalStyle />
       <WeatherCard />
-    </>
+    </body>
   );
 }
 

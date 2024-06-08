@@ -8,17 +8,17 @@ const Input: FC = () => {
   return (
     <StyledDivInput>
       <StyledInput
-          id="outlined-basic"
-          variant="outlined"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <LocationSearchingIcon />
-              </InputAdornment>
-            ),
-          }}
-          placeholder="Ingrese su ubicacion"
-        />
+        id="outlined-basic"
+        variant="outlined"
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <LocationSearchingIcon />
+            </InputAdornment>
+          ),
+        }}
+        placeholder="Ingrese su ubicacion"
+      />
     </StyledDivInput>
   );
 };
