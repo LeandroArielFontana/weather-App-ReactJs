@@ -1,10 +1,5 @@
 import { FC } from "react";
-import {
-  ImageStyled,
-  SpanTemperatureStyled,
-  TemperatureStyled,
-  WeatherBoxStyled,
-} from "./styled";
+import { ImageStyled, TemperatureStyled, WeatherBoxStyled } from "./styled";
 
 interface WeatherData {
   imageUrl: any;
@@ -23,7 +18,7 @@ const WeatherBox: FC<WeatherData> = ({ imageUrl, weather }) => {
         )}
       </>
       <TemperatureStyled>
-        {weather ? `${weather.main.temp}°C` : "No disponible"}
+        {weather ? `${weather.main.temp}°C` : "Error"}
       </TemperatureStyled>
     </WeatherBoxStyled>
   );
